@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Poppins:wght@100;400;800&display=swap');
+
+:root{
+    --bg-color: #B5BA72;
+    --main-color: #99907D;
+    --secondary-color: #7D6F86;
+    --third-color: #585191;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-color);
+    position: relative;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    background: var(--main-color);
+    margin-top: 4%;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 10px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid var(--third-color);
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    font-size: 50px;
+    letter-spacing: 5px;
+    gap: 15px;
+    justify-content: center;
+    border-radius: 5px;
+    background: var(--secondary-color);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/*.betu {
+    position: absolute;
+    background: var(--secondary-color);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    align-self: center;
+}
+
+.betu:hover {
+    background: var(--third-color);
+    cursor: move;
+}
+
+.betu {
+    user-select: none;
+}*/
+
+table{
+    border-collapse: collapse;
+    width: auto;
+}
+
+tr{
+    padding: 10px;
+    letter-spacing: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.element {
+    border: 1px solid var(--third-color);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    font-size: 50px;
+    letter-spacing: 5px;
+    justify-content: center;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    cursor: -webkit-grab;
+}
+
+.element:hover {
+    height: 150%;
+    width: 150%;
+    transition: 3ms;
+    background-color: var(--third-color);
+    cursor: -webkit-grab;
+}
+
+.element:active {
+    cursor: -webkit-grabbing;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: var(--main-color);
+    margin-top: 12%;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 20px;
+}
+
+.select {
+    flex-direction: row;
+}
+
+.tanar {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: var(--main-color);
+    margin-top: 12%;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 20px;
+}
+
+.osztaly {
+    width: 70px;
+}

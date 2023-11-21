@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új Feladat Rögzítése</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="tanarPanel.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form class="tanar">
+            <h1>Új Feladat Rögzítése</h1>
+            <input type="text" id="elsoSzo" placeholder="Első Szó">
+            <input type="text" id="masodikSzo" placeholder="Második Szó">
+            <input type="text" id="harmadikSzo" placeholder="Harmadik Szó">
+            <input type="text" id="negyedikSzo" placeholder="Negyedik Szó">
+            <br>
+            <input oninput="checkNumber()" id="osztaly" class="osztaly" type="number" min="5" max="8" placeholder="Osztály">
+            <br>
+
+            <button type="button">Rögzítés</button>
+        </form>
+            
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <script defer src="register.js"></script>
+    <title>Regisztráció</title>
+</head>
+
+<body>
+    <form class="login">
+        <h1>Regisztráció</h1>
+        <input type="text" id="username" placeholder="Felhasználónév">
+        <input type="password" id="password" placeholder="Jelszó">
+        <div class="select">
+            <label for="tanulo">Tanuló</label>
+            <input checked type="radio" name="jogosultsag-szint" id="tanulo">
+        </div>
+        <div class="select">
+            <label for="tanar">Tanár</label>
+            <input type="radio" name="jogosultsag-szint" id="tanar">
+        </div>
+        <div class="select">
+            <label for="webmester">Webmester</label>
+            <input type="radio" name="jogosultsag-szint" id="webmester">
+        </div>
+        <button type="button" onclick="saveData(); alert('Regisztráció sikeres!')">Regisztrálás</button>
+    </form>
+</body>
+
+</html>

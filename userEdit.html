@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Dropdown</title>
+
+</head>
+<body>
+
+<div class="dropdown-container">
+    <div class="dropdown" onclick="toggleDropdown()">Select a Name</div>
+    <div class="options" id="dropdownOptions">
+    </div>
+</div>
+
+<input type="text" id="selectedName" readonly>
+
+<div id="actionButtons">
+    <button onclick="editName()">Edit</button>
+    <button onclick="saveName()">Save</button>
+    <button onclick="deleteName()">Delete</button>
+</div>
+
+<script>
+    const versenyzok = ["John", "Jane", "Doe", "Alice", "Bob"];
+
+    let originalName = "";
+
+    function populateDropdown(versenyzok) {
+        const dropdownOptions = document.getElementById("dropdownOptions");
+        dropdownOptions.innerHTML = "";
+
+        versenyzok.forEach(name => {
+            const editOption = document.createElement("a");
+            editOption.href = "javascript:void(0);";
+            editOption.textContent = name;
+            editOption.onclick = function () {
+                selectName(name);
+            };
+            dropdownOptions.appendChild(editOption);
+        });
+    }
+
+    function toggleDropdown() {
+        const options = document.getElementById("dropdownOptions");
+        options.style.display = (options.style.display === "block") ? "none" : "block";
+    }
+
+    function selectName(name) {
+        const selectedNameInput = document.getElementById("selectedName");
+        selectedNameInput.value = name;
+        originalName = name;
+    }
+
+    function editName() {
+        const selectedNameInput = document.getElementById("selectedName");
+        selectedNameInput.readOnly = false;
+        selectedNameInput.focus();
+    }
+
+    function saveName() {
+        const selectedNameInput = document.getElementById("selectedName");
+        const editedName = selectedNameInput.value;
+
+        alert(`Saving ${editedName}`);
+
+        selectedNameInput.readOnly = true;
+
+        const index = versenyzok.indexOf(originalName);
+        if (index !== -1) {
+            versenyzok[index] = editedName;
+            populateDropdown(versenyzok);
+        }
+    }
+
+    function deleteName() {
+        const selectedNameInput = document.getElementById("selectedName");
+        const selectedName = selectedNameInput.value;
+
+        const confirmDelete = confirm(`Are you sure you want to delete ${selectedName}?`);
+        if (confirmDelete) {
+            const index = versenyzok.indexOf(selectedName);
+            if (index !== -1) {
+                versenyzok.splice(index, 1);
+                populateDropdown(versenyzok);
+                selectedNameInput.value = "";
+            }
+        }
+    }
+
+    populateDropdown(versenyzok);
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown')) {
+            const dropdownOptions = document.getElementById("dropdownOptions");
+            if (dropdownOptions.style.display === "block") {
+                dropdownOptions.style.display = "none";
+            }
+        }
+    };
+
+</script>
+
+</body>
+</html>
